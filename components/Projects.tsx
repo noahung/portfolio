@@ -12,21 +12,24 @@ const projects: Project[] = [
     title: 'Invoicing App',
     description: 'A production platform for billing, invoices, and business management.',
     category: 'SaaS Platform',
-    image: project1
+    image: project1,
+    link: 'https://quoteonthego.co.uk/'
   },
   {
     id: '2',
     title: 'AI-Powered Study App',
     description: 'Learning tool with intelligent study support and dynamic study features.',
     category: 'EdTech',
-    image: project2
+    image: project2,
+    link: 'https://noahung.github.io/studia-website/'
   },
   {
     id: '3',
     title: 'Scholarship Search',
     description: 'Helps students discover and apply for scholarships worldwide.',
     category: 'Web Application',
-    image: project3
+    image: project3,
+    link: 'https://myanmarscholar.com/'
   },
   {
     id: '4',
@@ -79,7 +82,12 @@ const Projects: React.FC = () => {
                         {project.description}
                     </p>
 
-                    <a href="#" className="inline-flex items-center text-white text-sm font-semibold group/btn">
+                    <a 
+                      href={project.link || '#'} 
+                      target={project.link ? "_blank" : undefined}
+                      rel={project.link ? "noopener noreferrer" : undefined}
+                      className={`inline-flex items-center text-white text-sm font-semibold group/btn ${!project.link ? 'cursor-default opacity-50' : ''}`}
+                    >
                         <span className="border-b border-zinc-600 pb-1 group-hover/btn:border-blue-400 group-hover/btn:text-blue-400 transition-colors duration-300">View Case Study</span>
                     </a>
                </div>

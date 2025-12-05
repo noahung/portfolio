@@ -9,6 +9,7 @@ export interface Project {
   description: string;
   category: string;
   image?: string;
+  link?: string;
 }
 
 export interface Experience {
