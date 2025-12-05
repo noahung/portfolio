@@ -17,7 +17,7 @@ const pillars = [
   {
     title: "Performance = Revenue",
     category: "Hybrid",
-    desc: "Speed directly correlates with conversion. I optimize every byte to ensure fast load times lead to higher retention and lower bounce rates.",
+    desc: "Speed directly correlates with conversion. I optimise every byte to ensure fast load times lead to higher retention and lower bounce rates.",
     accent: "purple"
   },
   {

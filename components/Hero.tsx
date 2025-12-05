@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
                 className="text-lg md:text-xl text-zinc-400 max-w-xl mx-auto lg:mx-0 mb-10 font-light leading-relaxed"
                 >
                 The intersection of <span className="text-zinc-200 font-medium">Full-Stack Engineering</span> and <span className="text-zinc-200 font-medium">Digital Marketing</span>. 
-                I don't just write code; I build SEO-optimized, high-converting platforms that scale.
+                I don't just write code; I build SEO-optimised, high-converting platforms that scale.
                 </motion.p>
 
                 <motion.div

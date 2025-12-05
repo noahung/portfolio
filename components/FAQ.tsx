@@ -25,7 +25,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Can you manage my Google Ads (PPC) campaigns?",
-    answer: "Yes. With my background as a Head of Digital Marketing, I have extensive experience managing high-budget PPC campaigns. I can help set up, optimize, and manage your Google Ads to ensure maximum ROI."
+    answer: "Yes. With my background as a Head of Digital Marketing, I have extensive experience managing high-budget PPC campaigns. I can help set up, optimise, and manage your Google Ads to ensure maximum ROI."
   },
   {
     question: "Can you help with marketing after launch?",

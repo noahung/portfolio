@@ -22,8 +22,8 @@ const steps = [
   },
   { 
     num: "04", 
-    title: "Launch, Scale & Optimize", 
-    desc: "Deployment is just the beginning. I configure monitoring, optimize Core Web Vitals, and refine the product based on real-world usage data.",
+    title: "Launch, Scale & Optimise", 
+    desc: "Deployment is just the beginning. I configure monitoring, optimise Core Web Vitals, and refine the product based on real-world usage data.",
     tags: ["CI/CD Pipelines", "Performance Tuning", "Analytics Setup"]
   },
 ];

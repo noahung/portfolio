@@ -26,7 +26,7 @@ const timelineData: TimelineItem[] = [
     year: '2022 - 2023',
     title: 'MBA Student',
     company: 'University of Gloucestershire',
-    description: 'Specialized in Marketing Intelligence and Big Data.',
+    description: 'Specialised in Marketing Intelligence and Big Data.',
     type: 'growth',
     skills: ['Marketing Intelligence', 'Big Data', 'Analytics', 'Research']
   },

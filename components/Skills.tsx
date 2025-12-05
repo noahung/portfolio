@@ -122,7 +122,7 @@ const Skills: React.FC = () => {
                     <div>
                         <h4 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-4 border-b border-zinc-800 pb-2">Data & Optimization</h4>
                          <div className="flex flex-wrap gap-2">
-                             {["Google Analytics 4", "Tag Manager", "Looker Studio", "VWO (A/B Testing)", "Conversion Modeling"].map(skill => (
+                             {["Google Analytics 4", "Tag Manager", "Looker Studio", "VWO (A/B Testing)", "Conversion Modelling"].map(skill => (
                                  <span key={skill} className="px-3 py-1.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm hover:border-emerald-500/50 hover:text-emerald-400 transition-colors cursor-default">
                                     {skill}
                                  </span>

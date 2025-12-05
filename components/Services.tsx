@@ -41,7 +41,7 @@ const servicesData: Service[] = [
   },
   {
     title: "Performance Marketing",
-    description: "Data-driven paid acquisition campaigns designed to lower CPA and maximize Return on Ad Spend (ROAS).",
+    description: "Data-driven paid acquisition campaigns designed to lower CPA and maximise Return on Ad Spend (ROAS).",
     type: 'growth',
     icon: <ChartIcon />,
     deliverables: ["Google Ads", "Meta (FB/Insta) Ads", "Retargeting Strategy", "Funnel Optimization"]
@@ -69,7 +69,7 @@ const servicesData: Service[] = [
   },
   {
     title: "Digital Transformation",
-    description: "Strategic consulting to modernize legacy systems and integrate digital workflows into traditional businesses.",
+    description: "Strategic consulting to modernise legacy systems and integrate digital workflows into traditional businesses.",
     type: 'strategy',
     icon: <CpuIcon />,
     deliverables: ["Tech Roadmap", "Vendor Selection", "Process Automation", "Team Training"]
@@ -88,7 +88,7 @@ const Services: React.FC = () => {
   return (
     <section id="services" className="py-32 bg-[#050505] relative overflow-hidden border-t border-zinc-900">
       
-      {/* Background Ambience - Massive Multicolor Glow */}
+      {/* Background Ambience - Massive Multicolour Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[600px] pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 via-purple-900/10 to-teal-900/10 blur-[100px] rounded-full mix-blend-screen" />
       </div>

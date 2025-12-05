@@ -29,7 +29,7 @@ const MarketingExpertise: React.FC = () => {
               <div className="p-3 bg-blue-500/10 rounded border border-blue-500/20 text-blue-400">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               </div>
-              <h3 className="text-2xl font-bold text-white">Search Engine Optimization</h3>
+              <h3 className="text-2xl font-bold text-white">Search Engine Optimisation</h3>
             </div>
             
             <p className="text-zinc-400 mb-8 leading-relaxed">
@@ -39,8 +39,8 @@ const MarketingExpertise: React.FC = () => {
             <ul className="space-y-4">
               {[
                 { title: "Technical SEO", desc: "Core Web Vitals, Schema Markup, Crawlability" },
-                { title: "On-Page Optimization", desc: "Keyword Research, Content Strategy, Semantic HTML" },
-                { title: "Local SEO", desc: "GMB Optimization, Local Citations, Reviews Management" },
+                { title: "On-Page Optimisation", desc: "Keyword Research, Content Strategy, Semantic HTML" },
+                { title: "Local SEO", desc: "GMB Optimisation, Local Citations, Reviews Management" },
                 { title: "Authority Building", desc: "Backlink Strategy, Digital PR, Domain Authority" }
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
@@ -76,7 +76,7 @@ const MarketingExpertise: React.FC = () => {
               {[
                 { title: "Google Ads", desc: "Search, Display, Shopping, and YouTube Campaigns" },
                 { title: "Social Media Ads", desc: "Facebook, Instagram, LinkedIn, and TikTok" },
-                { title: "Conversion Optimization", desc: "Landing Page A/B Testing, Funnel Analysis" },
+                { title: "Conversion Optimisation", desc: "Landing Page A/B Testing, Funnel Analysis" },
                 { title: "Analytics & Tracking", desc: "GA4 Setup, GTM, Conversion Tracking, Reporting" }
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
