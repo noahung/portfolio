@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import profileImg from '../assets/profile.png';
 
 const Hero: React.FC = () => {
   return (
@@ -126,7 +127,7 @@ const Hero: React.FC = () => {
                     <div className="absolute inset-0 rounded-2xl overflow-hidden border border-zinc-700/50 bg-zinc-900 z-10 group shadow-2xl shadow-black/50">
                          {/* Placeholder Image */}
                          <img 
-                            src="assets/profile.png" 
+                            src={profileImg} 
                             alt="Noah Aung" 
                             className="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-100 group-hover:scale-110"
                          />
