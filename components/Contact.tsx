@@ -12,86 +12,84 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-32 bg-[#050505] border-t border-zinc-900 relative overflow-hidden">
-       {/* Background decoration */}
-       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none" />
+    <section id="contact" className="py-28 bg-[#14120b] relative border-t border-[#28261e] overflow-hidden">
+      {/* Background Ambient Warm Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-amber-500/[0.03] blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-             <h2 className="text-sm font-bold uppercase tracking-widest text-blue-500 mb-6">Get In Touch</h2>
-             <h3 className="text-5xl md:text-7xl font-bold text-white mb-12 tracking-tight">
-               Have an idea?<br />
-               <span className="text-zinc-500">Let's build it.</span>
-             </h3>
-          </motion.div>
-
-          <motion.div
-             initial={{ opacity: 0, scale: 0.9 }}
-             whileInView={{ opacity: 1, scale: 1 }}
-             viewport={{ once: true }}
-             className="relative inline-block group mb-16"
-          >
-             <button 
-                onClick={handleCopy}
-                className="relative z-10 text-3xl md:text-5xl lg:text-6xl font-bold text-white hover:text-blue-400 transition-colors duration-300 pb-2 border-b-2 border-zinc-800 hover:border-blue-500"
-             >
-                {email}
-             </button>
-             
-             {/* Copy tooltip */}
-             <AnimatePresence>
-                {copied && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        className="absolute -top-12 left-1/2 -translate-x-1/2 bg-zinc-800 text-white text-xs px-3 py-1 rounded border border-zinc-700"
-                    >
-                        Copied to clipboard!
-                    </motion.div>
-                )}
-             </AnimatePresence>
-             
-             {!copied && (
-                 <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-zinc-500 text-xs uppercase tracking-widest pointer-events-none">
-                     Click to Copy
-                 </div>
-             )}
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-zinc-900 pt-12">
-             <div className="flex flex-col items-center md:items-start">
-                <span className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Location</span>
-                <p className="text-white text-lg">Cheltenham, UK</p>
-                <p className="text-zinc-600 text-sm mt-1">Available for remote work</p>
-             </div>
-
-             <div className="flex flex-col items-center">
-                <span className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Socials</span>
-                <div className="flex space-x-8">
-                   <a href="https://github.com/noahung" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-white transition-colors text-lg">GitHub</a>
-                   <a href="https://www.linkedin.com/in/tharhtetaung/" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-white transition-colors text-lg">LinkedIn</a>
-                   <a href="#" className="text-zinc-400 hover:text-white transition-colors text-lg">Twitter</a>
-                </div>
-             </div>
-
-             <div className="flex flex-col items-center md:items-end">
-                <span className="text-zinc-500 text-xs uppercase tracking-widest mb-4">Status</span>
-                <div className="flex items-center gap-2">
-                    <span className="relative flex h-3 w-3">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                    </span>
-                    <p className="text-white text-lg">Open to new projects</p>
-                </div>
-             </div>
+      <div className="container mx-auto px-6 max-w-5xl relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="rounded-3xl border border-[#28261e] bg-[#1c1a14] p-8 sm:p-14 text-center backdrop-blur-xl shadow-2xl relative overflow-hidden"
+        >
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#28261e] bg-[#14120b] text-[#edecec] text-xs font-mono mb-6">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Currently Available For Selected Projects</span>
           </div>
-        </div>
+
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#edecec] mb-6">
+            Ready to bring your web platform to life?
+          </h2>
+
+          <p className="text-base sm:text-lg text-[#9b988f] max-w-xl mx-auto mb-10 leading-relaxed font-normal">
+            Whether you need a high-converting commercial website, a custom SaaS platform, or a full performance overhaul — let’s build it.
+          </p>
+
+          {/* Email Action Pill */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <a
+              href={`mailto:${email}`}
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#edecec] text-[#14120b] font-bold text-sm hover:bg-white transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <span>Email Me Directly</span>
+              <span>→</span>
+            </a>
+
+            <div className="relative w-full sm:w-auto">
+              <button
+                onClick={handleCopy}
+                className="w-full sm:w-auto px-6 py-4 rounded-xl border border-[#28261e] bg-[#14120b] text-[#edecec] font-mono text-xs hover:bg-[#24211a] hover:border-[#454035] transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>{email}</span>
+                <span className="text-[#9b988f]">📋</span>
+              </button>
+
+              <AnimatePresence>
+                {copied && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: -6 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    className="absolute -top-8 left-1/2 -translate-x-1/2 px-3 py-1 bg-emerald-400 text-black font-semibold text-[11px] rounded-md shadow-lg font-mono"
+                  >
+                    Copied!
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Footer Highlights */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 border-t border-[#28261e] text-xs text-[#9b988f]">
+            <div>
+              <span className="block text-[#68655c] uppercase tracking-wider text-[10px] mb-1 font-mono">Location</span>
+              <span className="text-[#edecec] font-medium">Cheltenham, UK · Remote Worldwide</span>
+            </div>
+            <div>
+              <span className="block text-[#68655c] uppercase tracking-wider text-[10px] mb-1 font-mono">Direct Connect</span>
+              <div className="flex justify-center gap-4 text-[#edecec] font-medium">
+                <a href="https://github.com/noahung" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/tharhtetaung/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn ↗</a>
+              </div>
+            </div>
+            <div>
+              <span className="block text-[#68655c] uppercase tracking-wider text-[10px] mb-1 font-mono">Response Time</span>
+              <span className="text-emerald-400 font-medium">Usually within 24 hours</span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,160 +1,175 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Project } from '../types';
 import project1 from '../assets/project-1.jpg';
 import project2 from '../assets/project-2.jpg';
 import project3 from '../assets/project-3.jpg';
-import project4 from '../assets/project-4.jpg';
 
-const projects: Project[] = [
+interface FlagshipProject {
+  id: string;
+  title: string;
+  subtitle: string;
+  category: string;
+  categoryColor: string;
+  urlDisplay: string;
+  description: string;
+  highlights: string[];
+  image: string;
+  link: string;
+}
+
+const flagshipProjects: FlagshipProject[] = [
   {
-    id: '1',
-    title: 'Invoicing App',
-    description: 'A production platform for billing, invoices, and business management.',
+    id: 'quoteonthego',
+    title: 'QuoteOnTheGo',
+    subtitle: 'Commercial Invoicing & Billing Platform',
     category: 'SaaS Platform',
+    categoryColor: 'border-[#28261e] text-[#edecec] bg-[#14120b]',
+    urlDisplay: 'quoteonthego.co.uk',
+    description:
+      'A full-scale commercial billing web app designed to streamline invoice generation, quote management, and client accounting for UK businesses with sub-second responsiveness.',
+    highlights: ['Commercial Production', 'Automated Invoicing', 'Client Workflows'],
     image: project1,
-    link: 'https://quoteonthego.co.uk/'
+    link: 'https://quoteonthego.co.uk/',
   },
   {
-    id: '2',
-    title: 'AI-Powered Study App',
-    description: 'Learning tool with intelligent study support and dynamic study features.',
-    category: 'EdTech',
+    id: 'studia',
+    title: 'Studia AI',
+    subtitle: 'Next-Gen Intelligent Study Application',
+    category: 'AI & EdTech',
+    categoryColor: 'border-[#28261e] text-[#f59e0b] bg-[#14120b]',
+    urlDisplay: 'noahung.github.io/studia-website',
+    description:
+      'An intelligent web platform combining AI study companions, active recall mechanisms, and dynamic summarization to help students learn faster and retain deeper knowledge.',
+    highlights: ['Intelligent Study Companion', 'Interactive Tools', 'High Engagement'],
     image: project2,
-    link: 'https://noahung.github.io/studia-website/'
+    link: 'https://noahung.github.io/studia-website/',
   },
   {
-    id: '3',
-    title: 'Scholarship Search',
-    description: 'Helps students discover and apply for scholarships worldwide.',
+    id: 'myanmarscholar',
+    title: 'Myanmar Scholar',
+    subtitle: 'Global Scholarship Discovery Engine',
     category: 'Web Application',
+    categoryColor: 'border-[#28261e] text-emerald-400 bg-[#14120b]',
+    urlDisplay: 'myanmarscholar.com',
+    description:
+      'A high-traffic non-profit platform helping students discover and apply for verified international scholarships, featuring custom filters and deadline notifications.',
+    highlights: ['10,000+ Students Reached', '500+ Listed Programs', '100% Free Access'],
     image: project3,
-    link: 'https://myanmarscholar.com/'
+    link: 'https://myanmarscholar.com/',
   },
-  {
-    id: '4',
-    title: 'Commercial Websites',
-    description: 'Dozens of commercial websites built for clients across sectors.',
-    category: 'WordPress / Custom',
-    image: project4
-  }
 ];
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="py-32 bg-[#050505] border-t border-zinc-900">
-      <div className="container mx-auto px-6">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Selected Work</h2>
-            <p className="text-zinc-500 text-xl">Production-grade software and interfaces.</p>
-        </motion.div>
+    <section id="projects" className="py-28 bg-[#14120b] relative overflow-hidden border-t border-[#28261e]">
+      {/* Background Subtle Ambient Spotlight */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/[0.03] blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white/[0.02] blur-[150px] rounded-full pointer-events-none" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-16">
+          <span className="text-xs font-mono uppercase tracking-wider text-[#e58c3a] block mb-2 font-medium">
+            Flagship Software
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#edecec] mb-4">
+            Production Web Platforms.
+          </h2>
+          <p className="text-base sm:text-lg text-[#9b988f] leading-relaxed">
+            Full-stack web applications engineered for speed, high user adoption, and daily business operations.
+          </p>
+        </div>
+
+        {/* Projects List */}
+        <div className="space-y-16">
+          {flagshipProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -10 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
-              className="group relative min-h-[500px] border border-zinc-800 bg-zinc-900/20 overflow-hidden flex flex-col transition-colors duration-500 hover:border-zinc-700 hover:bg-zinc-900/40"
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
+              className="rounded-2xl border border-[#28261e] bg-[#1c1a14] overflow-hidden shadow-2xl hover:border-[#454035] transition-all group"
             >
-               {/* Ambient Background Glow on Hover */}
-               <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-               {/* Content container - Top */}
-               <div className="p-8 relative z-20">
-                    <div className="flex items-center gap-3 mb-4">
-                        <span className="text-blue-500 text-xs tracking-widest uppercase font-bold border border-blue-500/30 px-2 py-1 rounded-sm bg-blue-500/10">
-                            {project.category}
-                        </span>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch">
+                {/* Left Column: Project Info */}
+                <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-[#28261e] bg-[#1c1a14]">
+                  <div>
+                    {/* Badge & Category */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-[11px] font-mono tracking-wide uppercase px-2.5 py-1 rounded-full border border-[#28261e] bg-[#14120b] text-[#9b988f]">
+                        {project.category}
+                      </span>
                     </div>
 
-                    <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-blue-100 transition-colors duration-300">{project.title}</h3>
-                    
-                    <p className="text-zinc-400 mb-6 leading-relaxed max-w-md group-hover:text-zinc-300 transition-colors duration-300">
-                        {project.description}
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#edecec] mb-2 group-hover:text-white transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm font-medium text-[#9b988f] mb-5">
+                      {project.subtitle}
                     </p>
 
-                    <a 
-                      href={project.link || '#'} 
-                      target={project.link ? "_blank" : undefined}
-                      rel={project.link ? "noopener noreferrer" : undefined}
-                      className={`inline-flex items-center text-white text-sm font-semibold group/btn ${!project.link ? 'cursor-default opacity-50' : ''}`}
-                    >
-                        <span className="border-b border-zinc-600 pb-1 group-hover/btn:border-blue-400 group-hover/btn:text-blue-400 transition-colors duration-300">View Case Study</span>
-                    </a>
-               </div>
+                    <p className="text-sm text-[#9b988f] leading-relaxed mb-8">
+                      {project.description}
+                    </p>
 
-               {/* Screenshot Area - Bottom/Fill with Cut-off effect */}
-               <div className="relative flex-grow w-full mt-4 overflow-hidden">
-                    {/* This container holds the screenshot and has the cut-off effect */}
-                    <div className="absolute top-0 left-8 right-0 bottom-0 transform translate-y-10 group-hover:translate-y-6 transition-transform duration-500 ease-out">
-                         
-                         {/* Shadow/Glow behind the shape on hover */}
-                         <div 
-                            className="absolute inset-0 bg-blue-500/20 blur-xl transform translate-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                            style={{ 
-                                clipPath: 'polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%)',
-                            }}
-                         />
-
-                         <div 
-                            className="w-full h-full bg-zinc-800 overflow-hidden relative shadow-2xl"
-                            style={{ 
-                                clipPath: 'polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%)',
-                            }}
-                         >
-                            {/* The Image / Placeholder */}
-                            <div className="w-full h-full relative group-hover:scale-105 transition-transform duration-700 ease-in-out">
-                                {/* Placeholder visual representing a UI */}
-                                <div className="absolute inset-0 bg-zinc-900">
-                                    {/* Mock UI Header */}
-                                    <div className="h-8 bg-zinc-800 border-b border-zinc-700 flex items-center px-4 space-x-2">
-                                        <div className="w-2 h-2 rounded-full bg-red-500/50"></div>
-                                        <div className="w-2 h-2 rounded-full bg-yellow-500/50"></div>
-                                        <div className="w-2 h-2 rounded-full bg-green-500/50"></div>
-                                    </div>
-                                    {/* Mock UI Content Area */}
-                                    <div className="p-6">
-                                        <div className="w-3/4 h-4 bg-zinc-800 rounded mb-4"></div>
-                                        <div className="w-1/2 h-4 bg-zinc-800 rounded mb-8"></div>
-                                        <div className="grid grid-cols-3 gap-4">
-                                            <div className="h-24 bg-zinc-800/50 rounded"></div>
-                                            <div className="h-24 bg-zinc-800/50 rounded"></div>
-                                            <div className="h-24 bg-zinc-800/50 rounded"></div>
-                                        </div>
-                                    </div>
-                                    {/* Actual Image Overlay */}
-                                    {project.image && (
-                                         <img 
-                                            src={project.image} 
-                                            alt={project.title}
-                                            className="absolute inset-0 w-full h-full object-cover opacity-100 transition-all duration-500"
-                                         />
-                                    )}
-                                </div>
-                                
-                                {/* Overlay Gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500" />
-                            </div>
-
-                            {/* Border effect for the cut-off shape */}
-                            <div 
-                                className="absolute inset-0 pointer-events-none border-t border-l border-zinc-700 opacity-50 group-hover:border-blue-500/50 group-hover:opacity-100 transition-all duration-500"
-                                style={{ 
-                                    clipPath: 'polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%)',
-                                }} 
-                            />
-                         </div>
+                    {/* Outcome Highlights */}
+                    <div className="space-y-2.5 mb-8">
+                      {project.highlights.map((highlight) => (
+                        <div key={highlight} className="flex items-center gap-2.5 text-xs text-[#edecec]">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                          <span>{highlight}</span>
+                        </div>
+                      ))}
                     </div>
-               </div>
+                  </div>
+
+                  {/* Links */}
+                  <div className="pt-6 border-t border-[#28261e] flex items-center justify-between">
+                    <span className="text-xs font-mono text-[#68655c]">Production</span>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-[#e58c3a] hover:underline"
+                    >
+                      <span>Visit Live Platform</span>
+                      <span>→</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Right Column: High Fidelity Browser Window Mockup */}
+                <div className="lg:col-span-7 bg-[#14120b] p-4 sm:p-8 flex items-center justify-center">
+                  <div className="w-full rounded-xl border border-[#28261e] bg-[#1c1a14] shadow-xl overflow-hidden group/frame">
+                    {/* Browser Chrome */}
+                    <div className="h-9 border-b border-[#28261e] bg-[#1c1a14] px-3.5 flex items-center justify-between">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#28261e]" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#28261e]" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#28261e]" />
+                      </div>
+
+                      <div className="px-3 py-0.5 rounded bg-[#14120b] border border-[#28261e] text-[11px] font-mono text-[#9b988f] flex items-center gap-1.5">
+                        <span className="text-emerald-400 text-[10px]">🔒</span>
+                        <span>{project.urlDisplay}</span>
+                      </div>
+
+                      <div className="w-10" />
+                    </div>
+
+                    {/* Screenshot Container */}
+                    <div className="relative aspect-[16/10] overflow-hidden bg-[#14120b]">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/frame:scale-[1.03]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#14120b]/60 via-transparent to-transparent pointer-events-none" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
