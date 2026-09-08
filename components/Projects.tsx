@@ -325,7 +325,8 @@ const Projects: React.FC = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.25 }}
-                    className="relative rounded-xl overflow-hidden p-5 sm:p-8 flex items-center justify-center min-h-[380px] border border-[#28261e]"
+                    className="relative rounded-2xl overflow-hidden p-6 sm:p-10 flex items-center justify-center min-h-[380px] border border-[#28261e]"
+                    style={{ transform: 'translateZ(0)' }}
                   >
                     {/* Classical Oil Painting Landscape Backdrop (Exact Cursor Style) */}
                     <img
@@ -335,9 +336,12 @@ const Projects: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-black/15 pointer-events-none" />
 
-                    {/* Floating macOS-Style UI Window (Matching Cursor) */}
-                    <div className="relative z-10 w-full max-w-xl rounded-xl overflow-hidden border border-[#28261e] bg-[#14120b] shadow-2xl shadow-black/80">
-                      <div className="h-8 border-b border-[#28261e] bg-[#1c1a14]/95 px-3.5 flex items-center justify-between backdrop-blur-md">
+                    {/* Floating macOS-Style UI Window with explicitly rounded upper corners */}
+                    <div 
+                      className="relative z-10 w-full max-w-xl rounded-2xl overflow-hidden border border-[#28261e] bg-[#14120b] shadow-2xl shadow-black/90"
+                      style={{ transform: 'translateZ(0)' }}
+                    >
+                      <div className="h-9 border-b border-[#28261e] bg-[#1c1a14] px-4 flex items-center justify-between rounded-t-2xl">
                         <div className="flex items-center gap-1.5">
                           <span className="w-2.5 h-2.5 rounded-full bg-[#38352b]" />
                           <span className="w-2.5 h-2.5 rounded-full bg-[#38352b]" />
@@ -352,11 +356,11 @@ const Projects: React.FC = () => {
                         <div className="w-8" />
                       </div>
 
-                      <div className="relative aspect-[16/10] overflow-hidden bg-[#14120b]">
+                      <div className="relative aspect-[16/10] overflow-hidden bg-[#14120b] rounded-b-2xl">
                         <img
                           src={activeProject.image}
                           alt={activeProject.name}
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-full object-cover object-top rounded-b-2xl"
                         />
                       </div>
                     </div>
