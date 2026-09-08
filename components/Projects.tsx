@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import project1 from '../assets/project-1.jpg';
 import project2 from '../assets/project-2.jpg';
 import project3 from '../assets/project-3.jpg';
+import bgLandscape from '../assets/Background.webp';
 
 interface FlagshipProject {
   id: string;
@@ -175,7 +176,7 @@ def match_eligible_programs(profile: StudentProfile, db_session) -> List[dict]:
 
 const Projects: React.FC = () => {
   const [activeProject, setActiveProject] = useState<FlagshipProject>(flagshipProjects[0]);
-  const [viewMode, setViewMode] = useState<'code' | 'preview'>('code');
+  const [viewMode, setViewMode] = useState<'code' | 'preview'>('preview');
   const [copied, setCopied] = useState(false);
 
   const handleCopyCode = () => {
@@ -324,14 +325,34 @@ const Projects: React.FC = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.25 }}
-                    className="flex flex-col items-center justify-center h-full py-4"
+                    className="relative rounded-xl overflow-hidden p-5 sm:p-8 flex items-center justify-center min-h-[380px] border border-[#28261e]"
                   >
-                    <div className="w-full rounded-xl overflow-hidden border border-[#28261e] bg-[#14120b] shadow-2xl">
-                      <div className="h-8 border-b border-[#28261e] bg-[#1c1a14] px-3 flex items-center gap-2 text-[11px] font-mono text-[#9b988f]">
-                        <span className="text-emerald-400">🔒</span>
-                        <span>https://{activeProject.urlDisplay}</span>
+                    {/* Classical Oil Painting Landscape Backdrop (Exact Cursor Style) */}
+                    <img
+                      src={bgLandscape}
+                      alt="Classical landscape painting backdrop"
+                      className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
+                    />
+                    <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+
+                    {/* Floating macOS-Style UI Window (Matching Cursor) */}
+                    <div className="relative z-10 w-full max-w-xl rounded-xl overflow-hidden border border-[#28261e] bg-[#14120b] shadow-2xl shadow-black/80">
+                      <div className="h-8 border-b border-[#28261e] bg-[#1c1a14]/95 px-3.5 flex items-center justify-between backdrop-blur-md">
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-[#38352b]" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-[#38352b]" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-[#38352b]" />
+                        </div>
+
+                        <div className="px-3 py-0.5 rounded bg-[#14120b] border border-[#28261e] text-[10px] font-mono text-[#9b988f] flex items-center gap-1.5">
+                          <span className="text-emerald-400 text-[9px]">🔒</span>
+                          <span>{activeProject.urlDisplay}</span>
+                        </div>
+
+                        <div className="w-8" />
                       </div>
-                      <div className="relative aspect-[16/10] overflow-hidden">
+
+                      <div className="relative aspect-[16/10] overflow-hidden bg-[#14120b]">
                         <img
                           src={activeProject.image}
                           alt={activeProject.name}

@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import profileImg from '../assets/profile.png';
+import bgLandscape from '../assets/Background.webp';
 
 const Hero: React.FC = () => {
   return (
     <section id="overview" className="relative min-h-[92vh] flex items-center pt-28 pb-20 overflow-hidden bg-[#14120b]">
-      {/* Cursor Ambient Warm Lighting */}
+      {/* Cursor Ambient Warm Lighting & Painterly Atmosphere */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Subtle grid lines */}
         <div 
@@ -20,6 +21,13 @@ const Hero: React.FC = () => {
         {/* Cursor Warm Ambient Spotlight */}
         <div className="absolute top-1/4 right-1/4 w-[600px] h-[500px] bg-amber-500/[0.04] blur-[140px] rounded-full" />
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[400px] bg-white/[0.02] blur-[120px] rounded-full" />
+
+        {/* Subtle Classical Art Ambient Backdrop (Cursor Signature Style) */}
+        <div className="absolute -top-10 right-0 w-[55%] h-[85%] opacity-[0.06] pointer-events-none overflow-hidden">
+          <img src={bgLandscape} alt="" className="w-full h-full object-cover object-left" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#14120b] via-transparent to-[#14120b]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#14120b] via-transparent to-[#14120b]" />
+        </div>
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
