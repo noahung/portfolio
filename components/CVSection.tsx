@@ -135,7 +135,10 @@ const CVSection: React.FC = () => {
   };
 
   return (
-    <section id="cv" className="py-28 bg-[#14120b] relative border-t border-[#28261e] overflow-hidden">
+    <section id="experience" className="py-28 bg-[#14120b] relative border-t border-[#28261e] overflow-hidden">
+      {/* Anchor alias for backwards compatibility */}
+      <div id="cv" className="absolute -top-20" />
+
       {/* Background Ambient Warm Spotlight */}
       <div className="absolute top-1/3 left-1/4 w-[600px] h-[500px] bg-amber-500/[0.03] blur-[170px] rounded-full pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[500px] h-[450px] bg-white/[0.02] blur-[160px] rounded-full pointer-events-none" />

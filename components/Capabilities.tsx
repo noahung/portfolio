@@ -16,88 +16,87 @@ interface Capability {
 
 const capabilities: Capability[] = [
   {
-    id: 'conversion',
-    badge: 'Conversion & Growth',
-    title: 'High-Converting Landing Pages',
+    id: 'fullstack',
+    badge: 'TypeScript & Full-Stack',
+    title: 'Type-Safe Architecture & APIs',
     summary:
-      'Purpose-built digital storefronts engineered with clear visual hierarchy, frictionless checkout flows, and commercial call-to-actions.',
-    color: '#f59e0b',
-    glowColor: 'rgba(245, 158, 11, 0.05)',
-    previewTitle: 'Commercial Conversion Architecture',
-    previewSubtitle: 'Optimized for user retention, lead generation, and customer trust.',
-    metrics: [
-      { label: 'Avg. Conversion Lift', value: '+34%' },
-      { label: 'Engagement Rate', value: '78%' },
-      { label: 'Mobile Checkout Flow', value: '< 45s' },
-    ],
-    details: [
-      'Visual storytelling tailored to brand positioning',
-      'Frictionless call-to-action placement and user pathways',
-      'Cross-device responsive testing across iOS, Android & desktop',
-    ],
-  },
-  {
-    id: 'saas',
-    badge: 'Full-Stack Architecture',
-    title: 'Custom Web & SaaS Applications',
-    summary:
-      'Scalable, secure, and reactive web applications with stateful interfaces, dynamic data sync, and clean API integrations.',
+      'End-to-end type safety from database schemas to client state, ensuring zero runtime undefined errors, clean API contracts, and deterministic data flow.',
     color: '#edecec',
     glowColor: 'rgba(237, 236, 236, 0.04)',
-    previewTitle: 'Production SaaS Infrastructure',
-    previewSubtitle: 'Built for enterprise reliability, high concurrent users, and sub-second responses.',
+    previewTitle: 'Type-Safe Distributed Architecture',
+    previewSubtitle: 'Strict type contracts across React frontends, cloud functions, and database schemas.',
     metrics: [
       { label: 'API Latency', value: '< 80ms' },
-      { label: 'Uptime Standard', value: '99.9%' },
-      { label: 'Security & Auth', value: 'Verified' },
+      { label: 'Null Safety', value: '100% Strict' },
+      { label: 'Uptime SLA', value: '99.9%' },
     ],
     details: [
-      'React & TypeScript typed frontends with state management',
-      'Automated PDF generation, invoicing, and transactional emails',
-      'RESTful & GraphQL API integration with secure data handling',
+      'Deterministic domain models with Zod validation and typed API contracts',
+      'Serverless cloud pipelines, automated PDFKit document generation & webhooks',
+      'Firestore & PostgreSQL atomic transactions with granular security rules',
     ],
   },
   {
     id: 'performance',
-    badge: 'Speed & Optimization',
-    title: 'Sub-Second Speed & Technical SEO',
+    badge: 'Edge & Web Vitals',
+    title: 'Sub-Second Speed & Edge Caching',
     summary:
-      'Lightning-fast page loading with 100/100 Google Lighthouse scores, semantic HTML, rich schema metadata, and optimized asset delivery.',
+      'Lightning-fast page loading with 100/100 Google Lighthouse scores, zero cumulative layout shift, and sub-80ms edge cache hits.',
     color: '#34d399',
     glowColor: 'rgba(52, 211, 153, 0.05)',
-    previewTitle: 'Google Lighthouse Performance Grade',
-    previewSubtitle: 'Engineered to rank higher on search engines and never lose a customer to slow loading.',
+    previewTitle: 'Core Web Vitals & Edge Performance',
+    previewSubtitle: 'Engineered for sub-second first contentful paint and zero layout shift across all viewports.',
     metrics: [
-      { label: 'Performance', value: '100' },
-      { label: 'Accessibility', value: '100' },
-      { label: 'Best Practices', value: '100' },
-      { label: 'SEO Score', value: '100' },
+      { label: 'Lighthouse Score', value: '100 / 100' },
+      { label: 'Layout Shift (CLS)', value: '0.000' },
+      { label: 'Edge TTFB', value: '< 60ms' },
     ],
     details: [
-      'Zero-layout-shift (CLS) rendering and modern image compression',
-      'Open Graph social previews and structured rich snippet markup',
-      'Edge CDN caching and minimal JavaScript bundle footprint',
+      'Zero-layout-shift (CLS) rendering with pre-allocated aspect ratios and SVG skeletons',
+      'Modern AVIF & WebP image compression pipeline with edge CDN distribution',
+      'Minimal JavaScript bundle footprint (< 390KB total) with route-level code splitting',
     ],
   },
   {
-    id: 'design',
-    badge: 'UI/UX Design Craft',
-    title: 'Modern Design Systems & Interactions',
+    id: 'design-system',
+    badge: 'UI/UX Engineering',
+    title: 'Design Systems & Micro-Interactions',
     summary:
-      'Bespoke, refined user interfaces built with Swiss typography, tasteful micro-animations, and consistent brand design tokens.',
-    color: '#fbbf24',
-    glowColor: 'rgba(251, 191, 36, 0.05)',
-    previewTitle: 'Interactive Design System & Micro-Interactions',
-    previewSubtitle: 'Fluid Framer Motion animations that feel natural, tactile, and premium.',
+      'Bespoke, refined user interfaces built with Swiss typography, tactile micro-animations, and consistent tokenized CSS variables.',
+    color: '#e58c3a',
+    glowColor: 'rgba(229, 140, 58, 0.05)',
+    previewTitle: 'Design Token System & Interactions',
+    previewSubtitle: 'Fluid Framer Motion micro-interactions that feel responsive, tactile, and natural.',
     metrics: [
       { label: 'Frame Rate', value: '60 FPS' },
-      { label: 'Color System', value: 'Accessible' },
+      { label: 'Accessibility', value: 'WCAG AAA' },
       { label: 'Component Library', value: 'Modular' },
     ],
     details: [
-      'Custom color scales, Geist typography, and harmonic spacing',
-      'Buttery smooth micro-interactions that reward user actions',
-      'Clean modular UI components built for seamless iteration',
+      'Harmonic typography using Geist & Geist Mono with mathematical line-height scales',
+      'Physics-based micro-interactions that reward user actions without layout lag',
+      'Design tokens with strict dark palettes, 1px borders, and warm ambient illumination',
+    ],
+  },
+  {
+    id: 'devops',
+    badge: 'DevOps & Reliability',
+    title: 'Automated CI/CD & Cloud Infrastructure',
+    summary:
+      'Zero-downtime deployment pipelines with GitHub Actions, strict TypeScript linting, automated static builds, and semantic SEO schema.',
+    color: '#fbbf24',
+    glowColor: 'rgba(251, 191, 36, 0.05)',
+    previewTitle: 'Automated CI/CD & Deploy Pipelines',
+    previewSubtitle: 'Automated verification, static bundling, and instant global deployment.',
+    metrics: [
+      { label: 'CI/CD Build Time', value: '~3.0s' },
+      { label: 'Broken Links', value: '0' },
+      { label: 'SEO Schema Grade', value: '100% Valid' },
+    ],
+    details: [
+      'Automated GitHub Actions workflow compiling and deploying static assets to edge hosts',
+      'Schema.org JSON-LD structured data and Open Graph social previews on every route',
+      'Strict TypeScript compiler checks and PostCSS autoprefixing on every git commit',
     ],
   },
 ];
@@ -106,7 +105,10 @@ const Capabilities: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Capability>(capabilities[0]);
 
   return (
-    <section id="capabilities" className="py-28 bg-[#14120b] relative border-t border-[#28261e] overflow-hidden">
+    <section id="engineering" className="py-28 bg-[#14120b] relative border-t border-[#28261e] overflow-hidden">
+      {/* Anchor alias for backwards compatibility */}
+      <div id="capabilities" className="absolute -top-20" />
+
       {/* Subtle Warm Spotlight */}
       <div
         className="absolute top-1/2 right-1/3 w-[600px] h-[500px] blur-[160px] rounded-full pointer-events-none transition-colors duration-700"
@@ -117,13 +119,13 @@ const Capabilities: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <span className="text-xs font-mono uppercase tracking-wider text-[#e58c3a] block mb-2 font-medium">
-            Core Capabilities
+            System Standards &amp; Technical Capabilities
           </span>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#edecec] mb-4">
-            How I Build High-Impact Websites.
+            Engineering Standards &amp; Architecture.
           </h2>
           <p className="text-base sm:text-lg text-[#9b988f] leading-relaxed">
-            Combining full-stack technical engineering with commercial marketing strategy to deliver digital products that stand out.
+            How production software systems are designed, structured, and optimized for sub-second performance and operational reliability.
           </p>
         </div>
 
@@ -218,7 +220,7 @@ const Capabilities: React.FC = () => {
                 {/* Deliverables checklist */}
                 <div className="space-y-3 pt-6 border-t border-[#28261e]">
                   <div className="text-xs font-mono uppercase tracking-wider text-[#68655c] mb-3">
-                    Deliverables &amp; Standards
+                    Engineering Deliverables &amp; Standards
                   </div>
                   {activeTab.details.map((detail) => (
                     <div key={detail} className="flex items-center gap-3 text-xs sm:text-sm text-[#edecec]">
@@ -235,12 +237,12 @@ const Capabilities: React.FC = () => {
 
                 {/* Bottom Action */}
                 <div className="mt-8 pt-6 border-t border-[#28261e] flex items-center justify-between">
-                  <span className="text-xs font-mono text-[#68655c]">Tailored Strategy</span>
+                  <span className="text-xs font-mono text-[#68655c]">Production Ready</span>
                   <a
                     href="#contact"
                     className="text-sm font-medium text-[#e58c3a] hover:underline flex items-center gap-1"
                   >
-                    <span>Discuss Your Project</span>
+                    <span>Discuss Your Architecture</span>
                     <span>→</span>
                   </a>
                 </div>

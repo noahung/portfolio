@@ -2,12 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
-  { label: 'Overview', href: '#overview' },
-  { label: 'Flagship Apps', href: '#projects' },
-  { label: 'Client Websites', href: '#showcase' },
-  { label: 'Capabilities', href: '#capabilities' },
-  { label: 'CV & Experience', href: '#cv' },
-  { label: 'About', href: '#about' },
+  { label: 'Work', href: '#work' },
+  { label: 'Engineering', href: '#engineering' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -49,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ onSwitchToText }) => {
               Noah Aung
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             </span>
-            <span className="text-[11px] text-[#9b988f] font-normal">Digital Product & MarTech</span>
+            <span className="text-[11px] text-[#9b988f] font-normal">Digital Product &amp; MarTech</span>
           </div>
         </a>
 
@@ -59,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ onSwitchToText }) => {
             <a
               key={item.label}
               href={item.href}
-              className="px-4 py-1.5 text-xs font-medium text-[#9b988f] hover:text-[#edecec] hover:bg-[#24211a] rounded-full transition-all"
+              className="px-5 py-1.5 text-xs font-medium text-[#9b988f] hover:text-[#edecec] hover:bg-[#24211a] rounded-full transition-all"
             >
               {item.label}
             </a>
@@ -71,11 +68,14 @@ const Header: React.FC<HeaderProps> = ({ onSwitchToText }) => {
           {onSwitchToText && (
             <button
               onClick={onSwitchToText}
-              className="text-xs font-mono px-3.5 py-1.5 rounded-lg border border-[#28261e] bg-[#1c1a14] text-[#edecec] hover:bg-[#24211a] hover:border-[#454035] transition-all flex items-center gap-1.5 cursor-pointer shadow-sm"
-              title="Switch to minimalist text format (devanshusharma.com style)"
+              className="text-xs font-mono px-3.5 py-1.5 rounded-full border border-[#28261e] bg-[#1c1a14] text-[#edecec] hover:bg-[#24211a] hover:border-[#454035] transition-all flex items-center gap-2 cursor-pointer shadow-sm group"
+              title="Switch to minimalist text format [Press T]"
             >
-              <span>📄</span>
+              <span className="text-[11px] text-[#9b988f]">📄</span>
               <span>Text Mode</span>
+              <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-[#14120b] border border-[#28261e] text-[#68655c] group-hover:text-[#edecec] group-hover:border-[#454035]">
+                T
+              </span>
             </button>
           )}
           <a
