@@ -198,15 +198,10 @@ const Projects: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <span className="text-xs font-mono uppercase tracking-wider text-[#e58c3a] block mb-2 font-medium">
-              System Architecture &amp; Production Software
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#edecec] mb-3">
-              Flagship Software Engineering.
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4 leading-tight max-w-2xl">
+              <span className="text-[#edecec]">Flagship software engineering.</span>{' '}
+              <span className="text-[#888680]">Strict type contracts, sub-second latency, and scalable architecture.</span>
             </h2>
-            <p className="text-base sm:text-lg text-[#9b988f] max-w-2xl font-normal leading-relaxed">
-              Mission-critical web platforms engineered with strict type safety, sub-second latency, and scalable data models.
-            </p>
           </div>
 
           {/* Project Switcher Tabs (Cursor Style) */}
@@ -384,70 +379,44 @@ const Projects: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Stage: Architecture Specs & Production Deliverables */}
-            <div className="lg:col-span-5 p-6 sm:p-8 bg-[#1c1a14] flex flex-col justify-between">
+            {/* Right Stage: Clean Cursor Split Anatomy (Title, 2-line description, subtle link) */}
+            <div className="lg:col-span-5 p-8 sm:p-12 bg-[#1c1a14] flex flex-col justify-center">
               <div>
-                {/* Badge & Title */}
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-mono text-[#e58c3a] uppercase tracking-wider font-semibold">
-                    {activeProject.badge}
-                  </span>
-                </div>
+                <span className="text-xs font-mono text-[#e58c3a] uppercase tracking-wider font-semibold block mb-3">
+                  {activeProject.badge}
+                </span>
 
-                <h3 className="text-2xl font-bold text-[#edecec] mb-2">{activeProject.name}</h3>
-                <p className="text-xs sm:text-sm text-[#9b988f] leading-relaxed mb-6 font-normal">
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#edecec] mb-4 leading-tight">
+                  {activeProject.name}
+                </h3>
+
+                <p className="text-sm sm:text-base text-[#9b988f] leading-relaxed mb-8">
                   {activeProject.description}
                 </p>
 
-                {/* Metrics Row */}
-                <div className="grid grid-cols-3 gap-2.5 mb-6">
-                  {activeProject.metrics.map((m) => (
-                    <div key={m.label} className="p-3 rounded-xl border border-[#28261e] bg-[#14120b]">
-                      <div className="text-base sm:text-lg font-bold text-[#edecec] mb-0.5">{m.value}</div>
-                      <div className="text-[10px] text-[#9b988f] font-mono leading-tight">{m.label}</div>
-                    </div>
-                  ))}
-                </div>
+                <div className="flex flex-wrap items-center gap-6">
+                  <a
+                    href={activeProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-[#e58c3a] hover:text-[#f59e0b] transition-colors group"
+                  >
+                    <span>Visit live platform</span>
+                    <span className="transition-transform group-hover:translate-x-1">→</span>
+                  </a>
 
-                {/* Engineering Highlights */}
-                <div className="space-y-2.5 mb-6">
-                  <div className="text-[11px] font-mono uppercase tracking-wider text-[#68655c]">
-                    Architecture Decisions
-                  </div>
-                  {activeProject.keyHighlights.map((hl) => (
-                    <div key={hl} className="flex items-start gap-2.5 text-xs text-[#edecec] leading-relaxed">
-                      <span className="text-[#e58c3a] font-mono text-[11px] shrink-0 mt-0.5">✦</span>
-                      <span>{hl}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Stack Badges & CTA */}
-              <div className="pt-6 border-t border-[#28261e]">
-                <div className="text-[11px] font-mono uppercase tracking-wider text-[#68655c] mb-2.5">
-                  Core Stack
-                </div>
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  {activeProject.stack.map((item) => (
-                    <span
-                      key={item}
-                      className="text-[11px] font-mono px-2.5 py-1 rounded-md border border-[#28261e] bg-[#14120b] text-[#9b988f]"
+                  {activeProject.github && (
+                    <a
+                      href={activeProject.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-[#9b988f] hover:text-[#edecec] transition-colors group"
                     >
-                      {item}
-                    </span>
-                  ))}
+                      <span>View source</span>
+                      <span className="transition-transform group-hover:translate-x-0.5">↗</span>
+                    </a>
+                  )}
                 </div>
-
-                <a
-                  href={activeProject.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full rounded-full py-2.5 bg-[#25231c] hover:bg-[#edecec] hover:text-[#14120b] border border-[#28261e] hover:border-[#edecec] text-xs font-medium text-[#edecec] flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm group"
-                >
-                  <span>Launch Production Platform</span>
-                  <span className="text-[#9b988f] group-hover:text-[#14120b] transition-colors">↗</span>
-                </a>
               </div>
             </div>
           </div>

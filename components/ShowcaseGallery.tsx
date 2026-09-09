@@ -201,15 +201,10 @@ const ShowcaseGallery: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <span className="text-xs font-mono uppercase tracking-wider text-[#e58c3a] block mb-2 font-medium">
-              Selected Portfolio
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#edecec] mb-3">
-              Websites &amp; Platforms Delivered.
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4 leading-tight max-w-2xl">
+              <span className="text-[#edecec]">Websites &amp; platforms delivered.</span>{' '}
+              <span className="text-[#888680]">Commercial SaaS, web apps, and enterprise platforms.</span>
             </h2>
-            <p className="text-base sm:text-lg text-[#9b988f] max-w-2xl font-normal leading-relaxed">
-              Commercial platforms, SaaS applications, and client websites engineered across the UK and international markets.
-            </p>
           </div>
 
           {/* Category Filter Tabs (Cursor Pill Style) */}
@@ -221,7 +216,7 @@ const ShowcaseGallery: React.FC = () => {
                 className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
                   activeCategory === cat
                     ? 'bg-[#edecec] text-[#14120b] shadow-sm font-semibold'
-                    : 'text-[#9b988f] hover:text-[#edecec] hover:bg-[#24211a]'
+                    : 'text-[#888680] hover:text-[#edecec] hover:bg-[#24211a]'
                 }`}
               >
                 {cat}
@@ -230,7 +225,7 @@ const ShowcaseGallery: React.FC = () => {
           </div>
         </div>
 
-        {/* Filtered Portfolio Grid (3-Column Clean Card Layout matching OpenAI/Cursor design) */}
+        {/* Filtered Portfolio Grid (Clean Minimalist Cards matching Image 2) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredItems.map((item, index) => (
             <motion.div
@@ -240,13 +235,13 @@ const ShowcaseGallery: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.35, delay: index * 0.03 }}
-              className="rounded-2xl border border-[#28261e] bg-[#1c1a14] p-5 flex flex-col justify-between hover:border-[#454035] hover:bg-[#201e18] transition-all group"
+              className="rounded-2xl border border-[#28261e] bg-[#1c1a14] p-5 flex flex-col justify-between hover:border-[#454035] transition-all group"
             >
               <div>
                 {/* Website Screenshot with inset border & rounded corners */}
                 <div
                   onClick={() => setSelectedItem(item)}
-                  className="relative aspect-[16/10] rounded-xl overflow-hidden bg-[#14120b] border border-[#28261e]/80 mb-5 cursor-pointer"
+                  className="relative aspect-[16/10] rounded-xl overflow-hidden bg-[#100f0c] border border-[#28261e]/80 mb-5 cursor-pointer"
                 >
                   <img
                     src={item.image}
@@ -254,7 +249,7 @@ const ShowcaseGallery: React.FC = () => {
                     className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-[#14120b]/20 group-hover:bg-transparent transition-colors" />
+                  <div className="absolute inset-0 bg-[#14120b]/15 group-hover:bg-transparent transition-colors" />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-[2px]">
                     <span className="px-3.5 py-1.5 rounded-full bg-[#edecec] text-[#14120b] text-xs font-semibold shadow-lg">
                       Preview Project ↗
@@ -262,38 +257,27 @@ const ShowcaseGallery: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Metadata / Category & Tag (single clean line, no awkward truncation) */}
-                <div className="flex items-center gap-2 mb-2.5 text-xs">
-                  <span className="font-mono text-[#e58c3a] font-medium">
-                    {item.client.split('·')[0].trim()}
-                  </span>
-                  <span className="text-[#454035]">·</span>
-                  <span className="text-[#9b988f] font-mono text-[11px]">
-                    {item.tag}
-                  </span>
-                </div>
-
-                {/* Title */}
+                {/* Clean Title */}
                 <h3
                   onClick={() => setSelectedItem(item)}
-                  className="text-lg font-semibold text-[#edecec] mb-2 group-hover:text-white transition-colors leading-snug cursor-pointer"
+                  className="text-lg sm:text-xl font-bold text-[#edecec] mb-2 group-hover:text-white transition-colors leading-snug cursor-pointer"
                 >
                   {item.title}
                 </h3>
 
-                {/* Description */}
-                <p className="text-sm text-[#9b988f] line-clamp-2 leading-relaxed mb-6">
+                {/* Clean Description */}
+                <p className="text-sm text-[#888680] line-clamp-2 leading-relaxed mb-6 font-normal">
                   {item.description}
                 </p>
               </div>
 
-              {/* Bottom Action Pill Button (Matching Image 3) */}
+              {/* Bottom Action Pill Button (Exact Match to Image 2) */}
               <button
                 onClick={() => setSelectedItem(item)}
-                className="w-full rounded-full py-2.5 bg-[#25231c] hover:bg-[#edecec] hover:text-[#14120b] border border-[#28261e] hover:border-[#edecec] text-xs font-medium text-[#edecec] flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm group/btn"
+                className="w-full rounded-full py-2.5 bg-[#25231c] hover:bg-[#322f27] border border-[#2e2c24] text-xs font-medium text-[#edecec] flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm group/btn"
               >
-                <span>View Project</span>
-                <span className="text-[#9b988f] group-hover/btn:text-[#14120b] transition-colors">↗</span>
+                <span>View project</span>
+                <span className="text-[#888680] group-hover/btn:text-[#edecec] transition-colors">↗</span>
               </button>
             </motion.div>
           ))}

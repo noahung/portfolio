@@ -24,18 +24,10 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="rounded-3xl border border-[#28261e] bg-[#1c1a14] p-8 sm:p-14 text-center backdrop-blur-xl shadow-2xl relative overflow-hidden"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#28261e] bg-[#14120b] text-[#edecec] text-xs font-mono mb-6">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Currently Available For Selected Projects</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#edecec] mb-6">
-            Ready to bring your web platform to life?
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-8 leading-tight max-w-3xl mx-auto">
+            <span className="text-[#edecec]">Ready to build your web platform?</span>{' '}
+            <span className="text-[#888680]">Available for selected commercial and SaaS projects.</span>
           </h2>
-
-          <p className="text-base sm:text-lg text-[#9b988f] max-w-xl mx-auto mb-10 leading-relaxed font-normal">
-            Whether you need a high-converting commercial website, a custom SaaS platform, or a full performance overhaul — let’s build it.
-          </p>
 
           {/* Email Action Pill */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">

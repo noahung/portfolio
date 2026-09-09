@@ -26,12 +26,8 @@ const experiences: ExperienceItem[] = [
     summary:
       'Designing and developing SaaS products, managing high-budget client accounts, and spearheading internal AI automation.',
     bullets: [
-      'Designed, built and launched Quote on the Go (quoteonthego.co.uk), a SaaS quoting platform used by hundreds of UK tradespeople, using React, Firebase, and REST APIs, owning product direction, UX, development and deployment end-to-end.',
-      'Advise directors and SME owners on digital transformation, marketing technology and customer acquisition strategy across a portfolio of 15+ client accounts.',
-      'Manage and maintain 30+ client websites, having delivered 40+ website builds since joining, combining front-end development with conversion-focused design and copy.',
-      'Oversee digital advertising spend of over £150,000 across managed accounts, optimising paid campaigns and content calendars for measurable growth.',
-      'Developed AI-powered workflow automation and internal productivity tools using LLM APIs, improving content creation, development efficiency and proposal generation.',
-      'Improved average client site load speed by 38% and organic search visibility by 24% across managed accounts.',
+      'Designed, built, and launched Quote on the Go (quoteonthego.co.uk) SaaS using React, Firebase, and REST APIs, owning UX and engineering end-to-end.',
+      'Manage 30+ client web platforms and £150k+ digital budgets, delivering 40+ production builds with 38% faster average load speeds.',
     ],
     skills: ['React', 'Firebase', 'REST APIs', 'Product Direction', 'AI LLM APIs', 'SEO', '£150k+ PPC'],
   },
@@ -46,10 +42,8 @@ const experiences: ExperienceItem[] = [
     summary:
       'Directed nationwide automotive digital marketing strategy, multi-brand media budgets, and cross-functional team operations.',
     bullets: [
-      'Directed digital marketing strategy for Kia and Peugeot in Myanmar, owning an annual budget of over $250,000 across paid media, agencies and CRM.',
-      'Advised senior leadership and regional distributors on digital transformation initiatives, from CRM adoption to online lead-generation systems.',
-      'Built and led a 6-person cross-functional digital team, reporting into senior leadership and coordinating with regional distributor stakeholders.',
-      'Maintained campaign delivery and lead pipeline continuity through the 2021 political crisis before relocating to the UK in 2022.',
+      'Directed nationwide digital marketing strategy and $250k annual media budget across paid channels, CRM, and distributors.',
+      'Led a 6-person cross-functional digital team delivering lead pipelines and CRM infrastructure through regional expansion.',
     ],
     skills: ['$250k Budget', 'Cross-Functional Leadership', 'CRM Systems', 'Lead Generation', 'Automotive'],
   },
@@ -64,9 +58,8 @@ const experiences: ExperienceItem[] = [
     summary:
       'Led audience acquisition and commercial sponsored campaigns for one of the country’s premier digital media platforms.',
     bullets: [
-      'Led a team of 4 across the online marketing function for one of Myanmar’s leading media platforms, owning content, social, and paid strategy.',
-      'Managed an annual digital budget of over $150,000 and grew social following by 45%.',
-      'Launched native advertising and sponsored content packages for national and regional brand clients.',
+      'Led online marketing team for one of Myanmar’s premier media platforms, managing $150k+ budget and growing social reach by 45%.',
+      'Launched native digital advertising products and sponsored content systems for multinational brand partners.',
     ],
     skills: ['Media Strategy', 'Audience Growth', 'Native Advertising', 'Budget Management', 'Team Leadership'],
   },
@@ -81,8 +74,8 @@ const experiences: ExperienceItem[] = [
     summary:
       'Liaised between Singapore APAC leadership and telco operators to negotiate strategic carrier bundles.',
     bullets: [
-      'Secured and managed telecom and brand partnerships across Myanmar, negotiating co-marketing and carrier bundling deals with senior stakeholders that grew monthly active users by 22%.',
-      'Acted as primary liaison between the Singapore-based APAC leadership team and local partners in Myanmar.',
+      'Secured strategic telecom carrier partnerships and co-marketing campaigns that drove a 22% increase in monthly active users.',
+      'Served as primary regional liaison between Singapore APAC leadership and local telecom stakeholders.',
     ],
     skills: ['Strategic Partnerships', 'Telco Carrier Bundles', 'User Growth (+22%)', 'APAC Regional Relations'],
   },
@@ -97,8 +90,8 @@ const experiences: ExperienceItem[] = [
     summary:
       'Delivered nationwide digital launches and in-store interactive experiences across 20+ retail stores.',
     bullets: [
-      'Led digital project delivery for mobile and consumer electronics launches, coordinating marketing, retail, and IT stakeholders across 20+ stores nationwide.',
-      'Managed vendor and agency relationships for website, app and in-store digital touchpoint projects, introducing structured project tracking that cut turnaround time by 20%.',
+      'Led digital project delivery and interactive retail touchpoints across 20+ stores nationwide for flagship device launches.',
+      'Managed vendor relationships and introduced structured workflows that reduced project turnaround time by 20%.',
     ],
     skills: ['Retail Digital Touchpoints', 'Electronics Launches', 'Agency Management', 'Process Optimization'],
   },
@@ -148,15 +141,10 @@ const CVSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#28261e] bg-[#1c1a14] text-[#f59e0b] text-xs font-mono mb-4">
-              <span>✦ Track Record & Qualifications</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#edecec] mb-3">
-              Curriculum Vitae.
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight max-w-3xl">
+              <span className="text-[#edecec]">Curriculum Vitae.</span>{' '}
+              <span className="text-[#888680]">10+ years delivering digital products, SaaS platforms, and growth systems.</span>
             </h2>
-            <p className="text-base sm:text-lg text-[#9b988f] max-w-2xl">
-              10+ years of international experience delivering digital transformation, SaaS products, and growth systems.
-            </p>
           </div>
 
           {/* Action CTAs: Download / Print */}
@@ -179,32 +167,6 @@ const CVSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Quick Highlights Metric Row */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-          <div className="p-5 rounded-2xl border border-[#28261e] bg-[#1c1a14] text-left">
-            <div className="text-2xl sm:text-3xl font-bold text-[#edecec] mb-1">10+ Years</div>
-            <div className="text-xs text-[#9b988f]">International Experience</div>
-            <div className="text-[11px] text-[#68655c] mt-1">UK · Singapore · Asia-Pacific</div>
-          </div>
-
-          <div className="p-5 rounded-2xl border border-[#28261e] bg-[#1c1a14] text-left">
-            <div className="text-2xl sm:text-3xl font-bold text-emerald-400 mb-1">40+ Builds</div>
-            <div className="text-xs text-[#9b988f]">Web Platforms Delivered</div>
-            <div className="text-[11px] text-[#68655c] mt-1">SaaS, E-Com & Corporate</div>
-          </div>
-
-          <div className="p-5 rounded-2xl border border-[#28261e] bg-[#1c1a14] text-left">
-            <div className="text-2xl sm:text-3xl font-bold text-[#f59e0b] mb-1">£150k+</div>
-            <div className="text-xs text-[#9b988f]">Managed Paid Budgets</div>
-            <div className="text-[11px] text-[#68655c] mt-1">+ $250k Enterprise Automotive</div>
-          </div>
-
-          <div className="p-5 rounded-2xl border border-[#28261e] bg-[#1c1a14] text-left">
-            <div className="text-2xl sm:text-3xl font-bold text-[#edecec] mb-1">Mensa</div>
-            <div className="text-xs text-[#9b988f]">High IQ Society Member</div>
-            <div className="text-[11px] text-[#68655c] mt-1">MBA in Big Data (UK)</div>
-          </div>
-        </div>
 
         {/* View Selection Tabs */}
         <div className="flex gap-2 p-1.5 rounded-xl border border-[#28261e] bg-[#1c1a14] w-fit mb-10">
