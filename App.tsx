@@ -11,14 +11,15 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
-  // Default to 'text' mode as main landing
+  // Text version is strictly the main/first landing page on the website.
+  // Visual mode is only loaded if the URL explicitly contains ?view=visual.
   const [viewMode, setViewMode] = useState<'text' | 'visual'>(() => {
     try {
+      // Clear any legacy localStorage flag to ensure visitors always start on Text mode
+      localStorage.removeItem('noah_portfolio_view');
       const params = new URLSearchParams(window.location.search);
       if (params.get('view') === 'visual') return 'visual';
-      if (params.get('view') === 'text') return 'text';
-      const saved = localStorage.getItem('noah_portfolio_view');
-      return saved === 'visual' ? 'visual' : 'text';
+      return 'text';
     } catch {
       return 'text';
     }
@@ -27,10 +28,9 @@ function App() {
   const switchToVisual = () => {
     setViewMode('visual');
     try {
-      localStorage.setItem('noah_portfolio_view', 'visual');
       const url = new URL(window.location.href);
       url.searchParams.set('view', 'visual');
-      window.history.replaceState({}, '', url.toString());
+      window.history.pushState({}, '', url.toString());
     } catch (e) {
       console.warn(e);
     }
@@ -40,15 +40,24 @@ function App() {
   const switchToText = () => {
     setViewMode('text');
     try {
-      localStorage.setItem('noah_portfolio_view', 'text');
       const url = new URL(window.location.href);
       url.searchParams.delete('view');
-      window.history.replaceState({}, '', url.toString());
+      window.history.pushState({}, '', url.toString());
     } catch (e) {
       console.warn(e);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Synchronize viewMode with browser back/forward history buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const params = new URLSearchParams(window.location.search);
+      setViewMode(params.get('view') === 'visual' ? 'visual' : 'text');
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   // Keyboard shortcut: Press 't' or 'T' to toggle views (when not typing in form fields)
   useEffect(() => {
@@ -62,14 +71,13 @@ function App() {
         setViewMode((prev) => {
           const next = prev === 'text' ? 'visual' : 'text';
           try {
-            localStorage.setItem('noah_portfolio_view', next);
             const url = new URL(window.location.href);
             if (next === 'visual') {
               url.searchParams.set('view', 'visual');
             } else {
               url.searchParams.delete('view');
             }
-            window.history.replaceState({}, '', url.toString());
+            window.history.pushState({}, '', url.toString());
           } catch (err) {
             console.warn(err);
           }

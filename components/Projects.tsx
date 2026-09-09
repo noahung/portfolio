@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import project1 from '../assets/project-1.jpg';
+import project1 from '../assets/project-1.png';
 import project2 from '../assets/project-2.jpg';
 import project3 from '../assets/project-3.jpg';
 import bgLandscape from '../assets/Background.webp';

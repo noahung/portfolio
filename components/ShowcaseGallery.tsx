@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Import all 16 showcase images
-import img1 from '../assets/showcase/1.jpg';
+import img1 from '../assets/showcase/1.png';
 import img2 from '../assets/showcase/2.jpg';
 import img3 from '../assets/showcase/3.jpg';
 import img4 from '../assets/showcase/4.jpg';

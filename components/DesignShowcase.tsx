@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThreeDMarquee } from './ui/3d-marquee';
 
-import img1 from '../assets/showcase/1.jpg';
+import img1 from '../assets/showcase/1.png';
 import img2 from '../assets/showcase/2.jpg';
 import img3 from '../assets/showcase/3.jpg';
 import img4 from '../assets/showcase/4.jpg';
